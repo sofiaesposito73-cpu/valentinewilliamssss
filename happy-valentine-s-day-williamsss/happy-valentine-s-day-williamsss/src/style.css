@@ -1,0 +1,142 @@
+* { box-sizing: border-box; font-family: 'Comic Sans MS', Arial, sans-serif; } body { margin: 0; overflow: hidden; background: black; color: white; } .screen { display: none; height: 100vh; width: 100vw; position: relative; } .screen.active { display: block; } .content { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; } h1 { font-size: 60px; text-shadow: 0 0 15px hotpink; } h2 { font-size: 40px; } p { max-width: 600px; font-size: 18px; } button { margin-top: 15px; padding: 15px 35px; font-size: 18px; border: none; border-radius: 40px; cursor: pointer; background: linear-gradient(45deg, hotpink, cyan, yellow); color: black; font-weight: bold; animation: pulse 1.5s infinite; } button:hover { transform: scale(1.1) rotate(-2deg); } @keyframes pulse { 0% { box-shadow: 0 0 10px hotpink; } 50% { box-shadow: 0 0 30px cyan; } 100% { box-shadow: 0 0 10px hotpink; } } .gif { display: block; margin: 25px auto; width: 250px; } .chaos-bg span { position: absolute; font-size: 30px; animation: float 10s linear infinite; opacity: 0.7; } @keyframes float { from { transform: translateY(100vh) rotate(0deg); } to { transform: translateY(-120vh) rotate(720deg); } } .hidden { display: none; } /* ========== CHAOS LEVELS ========== */ /* Schermate 2-3-4: caos valentine */ #screen2, #screen3, #screen4 { background: linear-gradient( 120deg, hotpink, red, purple, deeppink ); animation: bgFlash 4s infinite alternate; } /* Schermata 5: CHAOS FINALE */ #screen5 { background: linear-gradient( 45deg, red, hotpink, magenta, yellow, cyan ); animation: bgFlashFast 1.2s infinite alternate; }
+
+/*========== BACKGROUND ANIMATIONS ========== */ @keyframes bgFlash { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(120deg); } } @keyframes bgFlashFast { 0% { filter: hue-rotate(0deg) saturate(1); } 100% { filter: hue-rotate(360deg) saturate(2); } } /* ========== GIF CAOTICHE ========== */ .floating-gif { position: absolute; width: 120px; opacity: 0.8; animation: drift 15s linear infinite; z-index: 2; } @keyframes drift { from { transform: translateY(20vh) rotate(0deg); } to { transform: translateY(-140vh) rotate(720deg); } } 
+
+.hearts-container { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; } .heart { position: absolute; font-size: 2rem; animation: floatUp linear infinite; opacity: 0.8; } @keyframes floatUp { 0% { transform: translateY(110vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; } } .explosion-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; } .exploding-heart { position: absolute; font-size: 2.5rem; animation: explode 1s ease-out forwards; } @keyframes explode { 0% { transform: scale(0.3); opacity: 1; } 100% { transform: translate(var(--x), var(--y)) rotate(720deg) scale(1.2); opacity: 0; } } #screen5 { animation: shake 0.3s infinite; } @keyframes shake { 0% { transform: translate(0); } 25% { transform: translate(4px, -4px); } 50% { transform: translate(-4px, 4px); } 75% { transform: translate(4px, 4px); } 100% { transform: translate(0); } }
+
+/* SCHERMATA 6 */
+#screen6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+/* SFONDO GIF */
+#screen6 .chaos-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExenhhNW0ya2xqaGsxZzFoOHN0cXJhNnZsZzY2cWQzc3c0NmlqcmJoNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bdb438bTcgY0h2/giphy.gif') center/cover no-repeat;
+  background-size: cover;
+}
+
+/* LAYER PARADISO */
+#screen6 .paradise-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* CONTENUTO SOPRA TUTTO */
+#screen6 .content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+/* TESTO LUMINOSO */
+#screen6 .content h2,
+#screen6 .content p {
+  animation: fadeGlow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px #fff;
+}
+@keyframes fadeGlow {
+  0% { opacity: 0.7; text-shadow: 0 0 10px #fff; }
+  100% { opacity: 1; text-shadow: 0 0 20px #fff; }
+}
+
+/* ANGELI */
+.paradise-layer img.angel {
+  width: 80px;
+  position: absolute;
+  animation: floatAngel 6s ease-in-out infinite alternate;
+}
+@keyframes floatAngel {
+  0% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-40px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(-5deg); }
+}
+
+/* CUORI LEGGERI */
+.paradise-layer .gentle-heart {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: top 15s linear, opacity 15s linear;
+}
+
+/* ESPLOSIONE CUORI */
+.paradise-layer .exploding-heart {
+  position: absolute;
+  font-size: 2.5rem;
+  animation: explode 1s ease-out forwards;
+}
+@keyframes explode {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: translate(var(--x), var(--y)) rotate(720deg) scale(1.2); opacity: 0; }
+}
+
+/* STELLINE SPARKLE */
+.paradise-layer .sparkle {
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0.8;
+  pointer-events: none;
+}
+#screen6 .content {
+  color: black;
+}
+
+/* glow dei bottoni */
+button {
+  position: relative;
+  z-index: 5;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: #ff69b4;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px #ff69b4;
+}
+
+button:hover {
+  box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff69b4;
+  transform: scale(1.05);
+}
+
+
+
+#startScreen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; /* sfondo nero */
+  z-index: 9999; /* sopra tutto */
+}
+
+#enterChaosBtn {
+  font-size: 2rem;
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 12px;
+  background: #ff4081;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff4081;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #ff4081; }
+  100% { box-shadow: 0 0 30px #ff80ab; }
+}
