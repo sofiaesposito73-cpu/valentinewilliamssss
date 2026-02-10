@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Happy Valentine&#39;s day Williamsss</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="startScreen">
+  <button id="enterChaosBtn">Click here please (volume up <3) </button>
+</div>
+<div class="screen active" id="screen1">
+  <div class="chaos-bg" id="chaos1"></div>
+
+  <div class="content">
+    <h1>VALENTINE'S DAY<br>MY WAY</h1>
+
+    <p>
+      I could’ve bought you chocolate, but you don't eat sugar.<br>
+      So I made you a website.
+    </p>
+
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" class="gif">
+
+    <button onclick="goToScreen(2)">ENTER THE CHAOS</button>
+  </div>
+</div>
+
+<div class="screen" id="screen2">
+  <div class="chaos-bg" id="chaos2"></div>
+
+  <div class="content">
+    <h2>Happy Valentine’s Day 💘</h2>
+
+    <button onclick="unlock('why'); goToScreen(3)">Why you (somehow)</button>
+    <button onclick="unlock('endure'); goToScreen(4)">Things I endure</button>
+    <button onclick="unlock('final'); goToScreen(5)">Valentine’s chaos finale</button>
+
+    <button id="secretBtn" class="hidden" onclick="goToScreen(6)">
+      DO NOT CLICK
+    </button>
+  </div>
+</div>
+
+<div class="screen" id="screen3">
+  <div class="hearts-container"></div>
+  <div class="chaos-bg"></div>
+  <div class="content">
+    <h2>Why you (somehow)</h2>
+    <p>
+      This was not a decision.<br>
+      It just happened.<br>
+      You can't avoid it.<br>
+      Like racoons invading garbage bins.
+    </p>
+
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzU1dzg1aHVweHF6N3h1cmNwdmQ3bzlkaXBtZ2V3dDYweXAybmxuNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/eytGhBLIR9QzuX1Yfp/giphy.gif" class="gif">
+
+    <button onclick="goToScreen(2)">← back to chaos</button>
+  </div>
+</div>
+
+<div class="screen" id="screen4">
+  <div class="hearts-container"></div>
+  <div class="chaos-bg"></div>
+  <div class="content">
+    <h2>Things I endure</h2>
+    <p>
+      Your voice.<br>
+      Your brain.<br>
+      Your existence.<br><br>
+      Unbelievably tolerable.
+    </p>
+
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXc0b2dyMDR1cDllYnc4M2p0dzkxZGxldzg3YjQxb2kwaHNoazQzbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PoqwD8dUq49hLVChGZ/giphy.gif" class="gif">
+
+    <button onclick="goToScreen(2)">← back to chaos</button>
+  </div>
+</div>
+
+<div class="screen" id="screen5">
+  <div class="hearts-container"></div>
+  <div class="explosion-layer"></div>
+  <div class="chaos-bg"></div>
+  <div class="content">
+    <h2>Valentine’s chaos finale</h2>
+    <p>
+      Roses are awkward,
+chocolates are not.<br>
+Distance is stupid,
+feelings are not.<br>
+
+This might be a mess,
+but it’s ours somehow.<br>
+No big declarations.
+Just here. Just now.<br>
+    </p>
+
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTBnaTljMGFibDZueWl6ajNoN2R5Zm5iM3d4c2l5bDI5aGpnNDR0NCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Lopx9eUi34rbq/giphy.gif" class="gif">
+
+    <button onclick="goToScreen(2)">← back to chaos</button>
+  </div>
+</div>
+
+<div class="screen" id="screen6">
+  <!-- Sfondo GIF del paradiso -->
+  <div class="chaos-bg"></div>
+
+  <!-- Layer per cuori, angeli, stelline -->
+  <div class="paradise-layer"></div>
+
+  <!-- Contenuto sopra il layer -->
+  <div class="content">
+    <h2>Congratulations.</h2>
+    <p>
+      You survived my Valentine’s website.<br><br>
+      Distance is annoying.<br>
+      You are not.<br><br>
+    </p>
+    <button onclick="goToScreen(1)">Repeatedly yours 💘</button>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
